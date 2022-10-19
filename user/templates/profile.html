@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-8 col-md-10 mx-auto">
+    <h4>Editor</h4>
+    <div class="card-header">hello my dear friend {{user.username}}</div>
+    <div class="card-body">
+        <img src="{{user.profile.image.url}}" alt="{{user.username}}" class="img-thumbnail" />
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ data_form|crispy }}
+        <br>
+        {{picture_form|crispy}}
+        <br>
+        <button class="btn btn-primary" id="sendMessageButton" type="submit">Update Profile</button>
+    </form>
+</div>
+{% endblock %}
