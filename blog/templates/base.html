@@ -40,8 +40,6 @@
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'home'%}">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'about'%}">About</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'post'%}">Sample Post</a>
-                    </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'contact'%}">Contact</a>
                     </li>
                     {%if not user.is_authenticated%}
@@ -50,6 +48,8 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'register'%}">Register</a>
                     </li>
                     {%else%}
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'post'%}">Create Post</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'profile'%}">Profile</a>
                     </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{%url 'logout'%}">Logout</a>

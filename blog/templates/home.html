@@ -22,9 +22,10 @@
             <!-- Post preview-->
             {%for blog in blogs%}
             <div class="post-preview">
-                <a href="#">
+                <a href="{%url 'detail' blog.id%}">
                     <h2 class="post-title">{{blog.title}}</h2>
-                    <h3 class="post-subtitle">{{blog.content}}</h3>
+                    <p class="post-subtitle">{{blog.content|slice:'5'}}...<a href="{%url 'detail' blog.id%}">read
+                            more</a></p>
                 </a>
                 <p class="post-meta">
                     Posted by
